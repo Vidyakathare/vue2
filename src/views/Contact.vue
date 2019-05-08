@@ -35,7 +35,12 @@
             ></textarea>
           </div>
           <div class="form-group">
-            <input type="file" name="myfile" placeholder="Upload File">
+            <input
+              @change="processFile($event)"
+              type="file"
+              name="myfile"
+              placeholder="Upload File"
+            >
           </div>
           <div class="form-group">
             <div name="captcha" data-netlify-recaptcha="true"></div>
@@ -54,7 +59,7 @@ export default {
       name: "",
       email: "",
       message: ""
-      // someData: []
+      someData: []
     }
   }),
   methods: {
@@ -78,11 +83,11 @@ export default {
       })
         .then(() => alert("successfully sent"))
         .catch(e => console.error(e));
+    },
+    processFile(event) {
+      this.someData = event.target.files[0];
     }
-    // processFile(event) {
-    //   this.someData = event.target.files[0];
-    // }
-    // @change="processFile($event)"
+    
   }
 };
 </script>
