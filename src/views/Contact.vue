@@ -43,7 +43,7 @@
             >
           </div>
           <div class="form-group">
-            <div name="captcha" data-netlify-recaptcha="true"></div>
+            <div data-netlify-recaptcha="true"></div>
           </div>
           <button type="submit" name="submit" class="btn btn-default btn-block">Send</button>
         </form>
@@ -58,7 +58,7 @@ export default {
     form: {
       name: "",
       email: "",
-      message: ""
+      message: "",
       someData: []
     }
   }),
@@ -87,7 +87,6 @@ export default {
     processFile(event) {
       this.someData = event.target.files[0];
     }
-    
   }
 };
 </script>
