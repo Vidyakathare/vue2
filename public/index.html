@@ -29,6 +29,38 @@
         JavaScript enabled. Please enable it to continue.</strong
       >
     </noscript>
+    <form
+      name="contact"
+      method="POST"
+      netlify-honeypot="bot-field"
+      data-netlify="true"
+      hidden
+    >
+      <p class="hidden">
+        <label
+          >Don’t fill this out if you're human: <input name="bot-field"
+        /></label>
+      </p>
+      <p>
+        <label>Name: <input type="text" name="name"/></label>
+      </p>
+
+      <p>
+        <label>Email: <input type="text" name="email"/></label>
+      </p>
+      <p>
+        <label>Message: <textarea name="message"></textarea></label>
+      </p>
+      <p>
+        <label>File:<input type="file" name="myfile"/></label>
+      </p>
+      <div class="form-group">
+        <div name="captcha" data-netlify-recaptcha="true"></div>
+      </div>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
     <video src="./assets/v1.mp4" autoplay="true" loop="true"></video>
     <div id="app"></div>
     <!-- built files will be auto injected -->
