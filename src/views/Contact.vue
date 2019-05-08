@@ -34,17 +34,7 @@
               class="form-control"
             ></textarea>
           </div>
-          <div class="form-group">
-            <input
-              @change="processFile($event)"
-              type="file"
-              name="myfile"
-              placeholder="Upload File"
-            >
-          </div>
-          <div class="form-group">
-            <div data-netlify-recaptcha="true"></div>
-          </div>
+
           <button type="submit" name="submit" class="btn btn-default btn-block">Send</button>
         </form>
       </div>
@@ -58,8 +48,7 @@ export default {
     form: {
       name: "",
       email: "",
-      message: "",
-      someData: []
+      message: ""
     }
   }),
   methods: {
@@ -71,7 +60,7 @@ export default {
         .join("&");
     },
     handleSubmit() {
-      fetch("/", {
+      fetch("/home", {
         method: "post",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -83,9 +72,6 @@ export default {
       })
         .then(() => alert("successfully sent"))
         .catch(e => console.error(e));
-    },
-    processFile(event) {
-      this.someData = event.target.files[0];
     }
   }
 };
