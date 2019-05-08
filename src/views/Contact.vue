@@ -60,7 +60,7 @@ export default {
         .join("&");
     },
     handleSubmit() {
-      fetch("/home", {
+      fetch("/", {
         method: "post",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
